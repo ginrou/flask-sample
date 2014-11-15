@@ -1,7 +1,20 @@
-FROM ginrou/flask-sample
+#
+# Python Dockerfile
+#
+# https://github.com/dockerfile/python
+#
 
-RUN pip install Flask gunicorn
+# Pull base image.
+FROM dockerfile/ubuntu
+
+Install Python.
+RUN \
+  apt-get update && \
+  apt-get install -y python python-dev python-pip python-virtualenv && \
+  rm -rf /var/lib/apt/lists/*
+
+RUN pip install Flask
 RUN mkdir -p /var/www
 ADD . /var/www
 EXPOSE 5000
-##ENTRYPOINT ["gunicorn", "/var/www/app.py"]
+ENTRYPOINT ["python", "/var/www/app.py"]
