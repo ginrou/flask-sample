@@ -8,4 +8,6 @@ def index():
     items = ["foo", "bar", "ihr"]
     return render_template("index.html", items = items )
 
-app.run()
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')

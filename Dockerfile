@@ -16,5 +16,7 @@ RUN \
 RUN pip install Flask
 RUN mkdir -p /var/www
 ADD . /var/www
+RUN ls /var
+RUN ls /var/www
 EXPOSE 5000
 ENTRYPOINT ["python", "/var/www/app.py"]
