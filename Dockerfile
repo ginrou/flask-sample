@@ -18,7 +18,7 @@ RUN pip install Flask
 
 # update source code
 RUN rm -rf /var/www
-RUN git clone git@github.com:ginrou/flask-sample.git /var/www
+RUN git clone https://github.com/ginrou/flask-sample.git /var/www
 RUN ls /var/www
 
 # post code commands
